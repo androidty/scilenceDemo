@@ -1,0 +1,2 @@
+# scilenceDemo
+一个Android应用静默安装后自启动的demo
