@@ -1,4 +1,4 @@
-package com.duye.pad.scilencedemo;
+﻿package com.duye.pad.scilencedemo;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
