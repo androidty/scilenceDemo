@@ -1,9 +1,12 @@
 package com.duye.pad.scilencedemo;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.List;
 
 /**
@@ -213,6 +216,34 @@ public class ShellUtils {
             this.result = result;
             this.successMsg = successMsg;
             this.errorMsg = errorMsg;
+        }
+    }
+
+
+
+    protected int excuteSuCMD(String cmd) {
+        PrintWriter PrintWriter = null;
+        Process process = null;
+        try {
+            process = Runtime.getRuntime().exec("su");
+            PrintWriter = new PrintWriter(process.getOutputStream());
+            PrintWriter.println("chmod 777 " + cmd);
+            PrintWriter
+                    .println("export LD_LIBRARY_PATH=/vendor/lib:/system/lib");
+            PrintWriter.println("pm install -r " + cmd);
+            // PrintWriter.println("exit");
+            PrintWriter.flush();
+            PrintWriter.close();
+            int value = process.waitFor();
+            Log.e("File.toString()====value=静默安装返回值===", "" + value);
+            return (Integer)value;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        } finally {
+            if (process != null) {
+                process.destroy();
+            }
         }
     }
 }

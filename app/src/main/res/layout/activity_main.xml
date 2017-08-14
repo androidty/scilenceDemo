@@ -11,16 +11,36 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         android:layout_centerInParent="true"
-       />
+        android:text="升级"
+        />
+
+    <TextView
+        android:id="@+id/version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_alignEnd="@+id/button"
+        android:layout_alignRight="@+id/versionname"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="13dp"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/versionname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_alignStart="@+id/button"
+        android:text="当前版本:"/>
+
     <!--<TextView-->
-    <!--android:layout_centerInParent="true"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_below="@+id/button"-->
-    <!--android:gravity="center"-->
-    <!--android:textSize="18dp"-->
-    <!--android:text="我是您刚才静默安装更新的应用"/>-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/button"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:gravity="center"-->
+        <!--android:text="我是您刚才静默安装更新的应用"-->
+        <!--android:textSize="18dp"/>-->
 
 </RelativeLayout>
